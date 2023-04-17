@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,11 @@ builder.Services.AddApiVersioning(opts => {
     opts.AssumeDefaultVersionWhenUnspecified = true;
     opts.DefaultApiVersion = new ApiVersion(1, 0);
     opts.ReportApiVersions = true;
+});
+builder.Services.AddVersionedApiExplorer(opts => {
+    opts.AssumeDefaultVersionWhenUnspecified = true;
+    opts.DefaultApiVersion = new ApiVersion(16, 0);
+
 });
 
 var app = builder.Build();
