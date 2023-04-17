@@ -16,9 +16,8 @@ builder.Services.AddApiVersioning(opts => {
     opts.ReportApiVersions = true;
 });
 builder.Services.AddVersionedApiExplorer(opts => {
-    opts.AssumeDefaultVersionWhenUnspecified = true;
-    opts.DefaultApiVersion = new ApiVersion(16, 0);
-
+    opts.GroupNameFormat = "'v'VVV";
+    opts.SubstituteApiVersionInUrl = true;
 });
 
 var app = builder.Build();
@@ -27,7 +26,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(opts => {
+
+        opts.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+        opts.SwaggerEndpoint("/swaggers/v2/swagger.json", "v2");
+    
+    });
 }
 
 app.UseHttpsRedirection();
