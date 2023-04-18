@@ -9,7 +9,7 @@ namespace VersionedAPI.Controllers;
 [ApiController]
 [ApiVersion("1.0",Deprecated = true)]
 [ApiVersion("2.0")]
-public class ValuesController : ControllerBase
+public class MultiVerController : ControllerBase
 {
     // GET: api/<ValuesController>
     [HttpGet]
