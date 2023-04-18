@@ -33,7 +33,7 @@ var license = new OpenApiLicense()
 builder.Services.AddApiVersioning(opts => { 
 
     opts.AssumeDefaultVersionWhenUnspecified = true;
-    opts.DefaultApiVersion = new ApiVersion(1, 0);
+    opts.DefaultApiVersion = new ApiVersion(2, 0);
     opts.ReportApiVersions = true;
 });
 builder.Services.AddVersionedApiExplorer(opts => {
