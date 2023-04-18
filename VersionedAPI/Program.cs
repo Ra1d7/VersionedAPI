@@ -27,7 +27,7 @@ var license = new OpenApiLicense()
 };
 
     opts.SwaggerDoc("v2", new OpenApiInfo() { Title = $"{Title} v2", Contact = Contact, Description = Description, TermsOfService = terms,License = license, Version = "v2" });
-    opts.SwaggerDoc("v1", new OpenApiInfo() { Title = $"{Title} v1", Contact = Contact, Description = Description,TermsOfService = terms,License = license,Version = "v1"});
+    opts.SwaggerDoc("v1", new OpenApiInfo() { Title = $"{Title} v1 (deprecated)", Contact = Contact, Description = Description,TermsOfService = terms,License = license,Version = "v1"});
 
 });
 builder.Services.AddApiVersioning(opts => { 
